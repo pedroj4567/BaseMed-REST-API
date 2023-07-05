@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon ./src/index.js",
     "start": "node ./src/index.js",
-    "build" : "npm i"
+    "prod": "NODE_ENV=production node ./src/index.js"
   },
   "repository": {
     "type": "git",
