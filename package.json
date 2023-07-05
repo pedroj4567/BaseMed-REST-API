@@ -10,6 +10,9 @@
     "prod": "NODE_ENV=production node ./src/index.js",
     "build": "npm i"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pedroj4567/BaseMed-repo.git"
