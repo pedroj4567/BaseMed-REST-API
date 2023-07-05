@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan('tiny'));
 
 //cors
-const whiteList = ['http://localhost:5173'];
+const whiteList = [`${process.env.FRONTEND_HOST}`];
 
 const corsOption = {
     origin : (origin,callback)=>{
