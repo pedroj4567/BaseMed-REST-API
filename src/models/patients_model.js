@@ -38,7 +38,12 @@ const Patients = sequelize.define('patients', {
     disease_ids:{
         type:DataTypes.ARRAY(DataTypes.JSON),
         defaultValue:[]
-    }
+    },
+    consults : {
+        type: DataTypes.ARRAY(DataTypes.JSON),
+        defaultValue : []
+    },
+
 })
 
 //realtions
