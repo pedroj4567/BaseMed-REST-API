@@ -7,7 +7,7 @@ async function sendEmail({email,name,lastname},password) {
     let transport = nodemailer.createTransport({
       host: process.env.HOST_EMAIL,
       port: process.env.PORT_EMAIL,
-      secure: false,
+      secure: true,
       auth: {
           user: process.env.USER_EMAIL,
           pass: process.env.PASSWORD_EMAIL
@@ -16,7 +16,7 @@ async function sendEmail({email,name,lastname},password) {
 
     //Enviar correo electrónico
     let info = await transport.sendMail({
-      from: 'baseMedsystem - register',
+      from: 'baseMedsystem - Registro',
       to: email,
       subject: 'Registro doctor - BASEMEDSYSTEM',
       html: `
