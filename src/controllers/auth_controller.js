@@ -16,7 +16,7 @@ const login = async (req,res) =>{
 
     if(!doctorFound){
         const error = new Error('Usuario no registrado en nuestra base de datos');
-        return res.status(401).json({msg:error.message, error:true});
+        return res.status(200).json({msg:error.message, error:true});
 
     }
     //compare the password sended and the save password
@@ -24,7 +24,7 @@ const login = async (req,res) =>{
  
     if(!doctorPassword){
         const error = new Error('Contraseña Incorrecta');
-        return res.status(401).json({msg:error.message, error:true});
+        return res.status(200).json({msg:error.message, error:true});
     }
     
     
