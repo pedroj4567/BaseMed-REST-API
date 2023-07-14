@@ -1,7 +1,7 @@
 import {sequelize} from '../database/db.js'
 import { DataTypes } from 'sequelize'
 import Diseases from './diseases_model.js'
-
+import Entidad from './entidad_model.js'
 const Patients = sequelize.define('patients', {
     id:{
         type: DataTypes.INTEGER,
@@ -43,11 +43,17 @@ const Patients = sequelize.define('patients', {
         type: DataTypes.ARRAY(DataTypes.JSON),
         defaultValue : []
     },
+    Entity : {
+        type: DataTypes.ARRAY(DataTypes.JSON),
+        defaultValue : []
+    }
+
 
 })
 
 //realtions
 Patients.belongsToMany(Diseases,{through:'PatientDisease'});
 Diseases.belongsToMany(Patients,{through:"PatientDisease"})
+Entidad.belongsToMany(Patients,{through:"PatientEntity"})
 
 export default Patients;

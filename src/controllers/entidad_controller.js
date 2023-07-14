@@ -4,7 +4,7 @@ async function getEntities(req,res){
 
     try {
         const entidades = await Entidad.findAll();
-
+        console.log(entidades);
         if (entidades == null){
             res.status(404).json({msg : "No Hay Registro"})
             return;
@@ -60,6 +60,10 @@ async function deleteEntities(req,res){
         return res.status(500).json({msg:error.message, erro:true})
     }
 }
+
+
+
+
 
 export {
     
